@@ -1,0 +1,49 @@
+http://192.168.1.110/cgi-bin/cmd.py
+#!/usr/bin/python3
+
+print("content-type: text/html")
+print()
+
+import subprocess
+
+x=subprocess.getoutput("sudo useradd jack200")
+print(x)
+
+******* vim /var/www/html/drun.html *******
+<form action="http://192.168.1.110/cgi-bin/cont.py">
+Enter OS name <input type='text'name='x'/>
+<br/>
+Select OS name:
+<br/>
+<select name='i'>
+        <option>centos:7</option>
+        <option>ubuntu:14.04</option>
+        <option>centos:latest</option>
+</select>
+<br/>
+<input type='submit'/>
+<form>
+
+****** /var/www/cgi-bin/cont.py ******
+#!/usr/bin/python3
+
+print("content-type: text/html")
+print()
+
+import subprocess as sp
+import cgi
+
+form = cgi.FieldStorage()
+
+osname = form.getvalue("x")
+osimage = form.getvalue("i")
+
+print(osname)
+print(osimage)
+
+cmd = "sudo docker run -i -d -t --name {0} {1}".format(osname, osimage)
+
+output = sp.getstatusoutput(cmd)
+
+status = output[0]
+out = output[1]
