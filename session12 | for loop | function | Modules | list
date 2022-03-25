@@ -1,1 +1,18 @@
+session 12 | for loop | function | Modules | list | Positional argument.
 
+#### Convensional for loop + list ####
+  x = [1,2,3,4,5]
+  y = []
+  for i in x:
+    j = i * i
+    y.append(j)
+  y
+  
+  [1, 4, 9, 16, 25]
+
+### inline approch to 
+x = [1,2,3,4,5]
+m = [ i * i for i in x ]
+m
+
+[1, 4, 9, 16, 25]
