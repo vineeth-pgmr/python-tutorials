@@ -16,3 +16,26 @@ m = [ i * i for i in x ]
 m
 
 [1, 4, 9, 16, 25]
+
+###################################
+
+x = [1,2,3,4,5,-1,6,7,-3,8,-8]
+m = [ i * i  if i > 0 else 0  for i in x  ] # importent...
+m
+[1, 4, 9, 16, 25, 0, 36, 49, 0, 64, 0]
+
+####################################   Group values passing to get sum 
+def iiec(*i):# x,y are called parameter / variables.
+        m = 0
+        for j in i:
+            m = j + m
+        return (m)
+    
+
+# calling the funcion
+
+u = iiec(1,2,3,4,5)
+print(u)
+
+###################################
+
