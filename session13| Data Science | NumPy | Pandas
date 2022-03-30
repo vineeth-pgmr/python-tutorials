@@ -1,1 +1,30 @@
 
+import numpy
+db = [['vimal',1111,'v@gm.com',3],['pop',2222,'p@gm.com',5],['kish',3333,'k@gm.com',2],['eric',4444,'e@gmail.com',6]]
+db
+[['vimal', 1111, 'v@gm.com', 3],
+ ['pop', 2222, 'p@gm.com', 5],
+ ['kish', 3333, 'k@gm.com', 2],
+ ['eric', 4444, 'e@gmail.com', 6]]
+ 
+ db[1][2]
+ 'p@gm.com'
+
+a = numpy.array(db)
+a
+array([['vimal', '1111', 'v@gm.com', '3'],
+       ['pop', '2222', 'p@gm.com', '5'],
+       ['kish', '3333', 'k@gm.com', '2'],
+       ['eric', '4444', 'e@gmail.com', '6']], dtype='<U21')
+       
+b = numpy.array([3,5,2,6])
+b.max()
+6
+b.min()
+2
+
+-------------------
+Querry --> row wise operation
+Analysis --> Column wise operation
+
+Column wise operation not supported by List.
