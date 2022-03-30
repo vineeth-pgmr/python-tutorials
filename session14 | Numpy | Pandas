@@ -1,0 +1,28 @@
+a = numpy.array([['abhi',1111,10],['jack',2222,20],['pop', 3333,30]])
+
+a.shape --> Check the diamension of array a
+a[:] --> Retrive all the colums & rows
+
+import numpy
+a = numpy.array([['abhi',1111,10],['jack',2222,20],['pop', 3333,30],['nik',4444,40]])
+type(a)
+a
+array([['abhi', '1111', '10'],
+       ['jack', '2222', '20'],
+       ['pop', '3333', '30'],
+       ['nik', '4444', '40']], dtype='<U21')
+       
+a.shape
+(4, 3)
+
+a[:]
+array([['abhi', '1111', '10'],
+       ['jack', '2222', '20'],
+       ['pop', '3333', '30'],
+       ['nik', '4444', '40']], dtype='<U21')
+score = a[:,2]
+score
+
+array(['10', '20', '30', '40'], dtype='<U21')
+score.shape
+(4,)
