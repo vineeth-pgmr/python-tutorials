@@ -26,3 +26,46 @@ score
 array(['10', '20', '30', '40'], dtype='<U21')
 score.shape
 (4,)
+
+s = score.astype(int)
+s
+
+array([10, 20, 30, 40])
+
+s.max()
+40
+
+s.min()
+10
+
+type(s)
+numpy.ndarray
+
+---------------------------------
+PANDAS
+----------------------------------
+
+import pandas
+d = pandas.read_csv('ds1.csv')
+d
+Name	Phone	Remarks	Score
+0	abhi	1111	ok	1
+1	jack	2222	ok	2
+2	pop	3333	good	3
+3	rahul	4444	vgood	4
+4	eric	5555	good	5
+
+d[['Score','Phone']]
+	Score	Phone
+0	1	1111
+1	2	2222
+2	3	3333
+3	4	4444
+4	5	5555
+
+d.iloc[1 , 1]
+2222
+
+type(d)
+pandas.core.frame.DataFrame
+
