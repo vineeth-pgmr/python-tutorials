@@ -1,1 +1,5 @@
-
+r = only read the file
+r+ = ceate the file and read
+w = only write
+a = append
+a+ = create & append
