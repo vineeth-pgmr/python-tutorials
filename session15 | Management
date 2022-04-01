@@ -1,0 +1,25 @@
+############### Single THreadded Program ##############
+def a():
+    while True:
+        print("aaaaaaaaaa")
+def b():
+    while True:
+        print("bbbbbbbbbb")
+
+a()
+b()
+
+################### MULTI Thredding pgm ##################
+
+import threading
+def a():
+    while True:
+        print("aaaaaaaaaa")
+def b():
+    while True:
+        print("bbbbbbbbbb")
+
+x1 = threading.Thread( target=a )
+x2 = threading.Thread( target=b )
+x1.start()
+x2.start()
