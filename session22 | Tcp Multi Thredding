@@ -1,0 +1,34 @@
+SERVER
+---------------------
+import socket
+import threading
+
+s = socket.socket()
+s.setsockopt(socket.SOL_SOCKET , socket.SO_REUSEADDR, 1)
+port = 2222
+ip = "192.168.1.110"
+s.bind(( ip , port ))
+s.listen()
+
+def multi(csession , addr):
+    print(addr)
+    csession.send(b"I am server")
+    data = csession.recv(100)
+    print(data)
+
+while True:
+    csession , addr =  s.accept()
+    t1 = threading.Thread(target=multi, args = (csession , addr))
+    t1.start()
+    
+CLIENT
+--------------------
+import socket
+s = socket.socket()
+serverip = "192.168.1.110"
+serverport = 2222
+s.connect((serverip, serverport))
+s.recv(100)
+s.send(b"I am client DD ")
+    
+    
